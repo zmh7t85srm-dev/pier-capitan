@@ -2,7 +2,7 @@
 (function () {
   "use strict";
 
-  const BOOKING_EMAIL = "piercapitan19@yahoo.com";
+  const BOOKING_EMAIL = "inquiry@piercapitan.com";
 
   /* ---------- Year ---------- */
   const year = document.getElementById("year");

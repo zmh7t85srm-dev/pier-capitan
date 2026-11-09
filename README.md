@@ -27,7 +27,7 @@ tags, Google business data (schema.org) and an accessible layout (keyboard tabs,
 2. **Opening hours**: currently "Open daily — call ahead". Add the real hours in the *Visit* section.
 3. **Facebook link**: points to a Facebook search. Replace it with the page's actual URL.
 4. **Map pin**: the map searches "Superdome, Ormoc City". Swap in the exact Google Maps embed for the stall if available.
-5. **Booking form**: opens the visitor's email app with a pre-filled message to `piercapitan19@yahoo.com`.
+5. **Booking form**: opens the visitor's email app with a pre-filled message to `inquiry@piercapitan.com`.
    To receive submissions without email apps, connect a form service (Formspree, Netlify Forms, etc.).
 6. **More photos**: add food and dining-area photos to `assets/img/` and to the gallery list.
 
