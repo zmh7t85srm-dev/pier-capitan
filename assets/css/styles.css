@@ -12,7 +12,7 @@
   --cream: #fbf7f1;
   --sand: #f3ece1;
   --ink: #221c19;
-  --ink-soft: #5e544d;
+  --ink-soft: #4f4640;
   --line: #e6dccf;
   --chalk: #1b1a19;
   --chalk-2: #262422;
@@ -37,6 +37,7 @@ html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + 12px)
 body {
   margin: 0;
   font-family: var(--font-body);
+  font-weight: 300;
   font-size: 1.0625rem;
   line-height: 1.65;
   color: var(--ink);
@@ -58,7 +59,7 @@ button { font: inherit; cursor: pointer; }
 
 /* ---------- Typography helpers ---------- */
 .eyebrow {
-  font-weight: 900; font-size: .78rem; letter-spacing: .22em; text-transform: uppercase;
+  font-weight: 700; font-size: .78rem; letter-spacing: .22em; text-transform: uppercase;
   color: var(--red); margin-bottom: .6em; display: inline-flex; align-items: center; gap: .7em;
 }
 .eyebrow::before { content: ""; width: 28px; height: 2px; background: currentColor; }
@@ -77,7 +78,7 @@ button { font: inherit; cursor: pointer; }
 .btn {
   display: inline-flex; align-items: center; justify-content: center; gap: .5em;
   min-height: 48px; padding: .75em 1.6em; border-radius: 999px; border: 2px solid transparent;
-  font-weight: 900; font-size: .92rem; letter-spacing: .06em; text-transform: uppercase; text-decoration: none;
+  font-weight: 700; font-size: .92rem; letter-spacing: .06em; text-transform: uppercase; text-decoration: none;
   transition: transform .15s ease, background-color .2s ease, color .2s ease, box-shadow .2s ease;
 }
 .btn:hover { transform: translateY(-2px); }
@@ -94,7 +95,7 @@ button { font: inherit; cursor: pointer; }
 .btn--outline-amber { border-color: var(--amber); color: var(--amber); }
 .btn--outline-amber:hover { background: var(--amber); color: var(--chalk); }
 
-.link-arrow { font-weight: 900; text-decoration: none; font-size: .9rem; letter-spacing: .05em; text-transform: uppercase; }
+.link-arrow { font-weight: 700; text-decoration: none; font-size: .9rem; letter-spacing: .05em; text-transform: uppercase; }
 .link-arrow::after { content: " →"; transition: margin .2s; }
 .link-arrow:hover::after { margin-left: 4px; }
 
@@ -208,7 +209,7 @@ button { font: inherit; cursor: pointer; }
 .promo--featured .promo__body p { color: #fbe1dd; }
 .promo--featured .link-arrow { color: var(--amber); }
 .badge {
-  align-self: flex-start; font-size: .72rem; font-weight: 900; letter-spacing: .15em; text-transform: uppercase;
+  align-self: flex-start; font-size: .72rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase;
   padding: 5px 12px; border-radius: 999px; background: var(--red-tint); color: var(--red);
 }
 .badge--amber { background: var(--amber); color: var(--chalk); }
@@ -246,7 +247,7 @@ button { font: inherit; cursor: pointer; }
 }
 .mobile-bar p { color: #cfc8c0; }
 .mb-intro { display: grid; grid-template-columns: 1.2fr .8fr; gap: clamp(32px, 6vw, 72px); align-items: center; margin-bottom: 64px; }
-.mb-tagline { font-family: var(--font-script); font-size: 2rem; color: var(--amber) !important; margin: -.2em 0 .5em; }
+.mb-tagline { font-family: var(--font-script); font-weight: 700; font-size: 2rem; color: var(--amber) !important; margin: -.2em 0 .5em; }
 .mb-intro__img { border-radius: var(--radius); box-shadow: 0 0 0 6px rgba(245, 165, 36, .9), var(--shadow-lg); aspect-ratio: 4 / 5; object-fit: cover; width: 100%; max-width: 420px; justify-self: center; }
 
 .pax-picker { border: 0; padding: 0; margin: 0 0 28px; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; align-items: center; }
@@ -265,17 +266,17 @@ button { font: inherit; cursor: pointer; }
 .pkg--popular { border: 2px solid var(--amber); box-shadow: 0 20px 40px rgba(0, 0, 0, .35); }
 .pkg__ribbon {
   position: absolute; top: -13px; left: 50%; transform: translateX(-50%); white-space: nowrap;
-  background: var(--amber); color: var(--chalk); font-size: .72rem; font-weight: 900; letter-spacing: .14em; text-transform: uppercase;
+  background: var(--amber); color: var(--chalk); font-size: .72rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
   padding: 5px 14px; border-radius: 999px;
 }
 .pkg h3 { font-family: var(--font-display); color: #fff; font-size: 1.45rem; margin: 0; }
-.pkg__tier { color: var(--amber) !important; font-weight: 900; letter-spacing: .25em; text-transform: uppercase; font-size: .78rem; margin: 4px 0 0; }
+.pkg__tier { color: var(--amber) !important; font-weight: 700; letter-spacing: .25em; text-transform: uppercase; font-size: .78rem; margin: 4px 0 0; }
 .pkg__price { margin: 22px 0 18px; padding-bottom: 18px; border-bottom: 1px solid rgba(255, 255, 255, .1); display: flex; flex-direction: column; }
 .pkg__amount { font-family: var(--font-display); font-weight: 800; font-size: 2.4rem; color: #fff; line-height: 1.1; }
 .pkg__amount.is-updating { animation: pop .35s ease; }
 @keyframes pop { 50% { transform: scale(1.06); color: var(--amber); } }
 .pkg__per { font-size: .9rem; color: #a9a199; }
-.pkg__label { font-size: .78rem; text-transform: uppercase; letter-spacing: .14em; font-weight: 900; margin-bottom: 8px; color: #a9a199 !important; }
+.pkg__label { font-size: .78rem; text-transform: uppercase; letter-spacing: .14em; font-weight: 700; margin-bottom: 8px; color: #a9a199 !important; }
 .pkg ul { list-style: none; padding: 0; margin: 0 0 24px; flex: 1; }
 .pkg li { padding: 7px 0 7px 28px; position: relative; }
 .pkg li::before { content: ""; position: absolute; left: 0; top: 13px; width: 14px; height: 8px; border-left: 2.5px solid var(--amber); border-bottom: 2.5px solid var(--amber); transform: rotate(-45deg); }
@@ -286,15 +287,15 @@ button { font: inherit; cursor: pointer; }
 .pkg-notes h4 { font-family: var(--font-display); color: var(--amber); font-size: 1.2rem; }
 .checklist, .notelist { list-style: none; padding: 0; margin: 0; }
 .checklist li, .notelist li { padding: 5px 0 5px 26px; position: relative; }
-.checklist li::before { content: "✓"; position: absolute; left: 0; color: var(--amber); font-weight: 900; }
-.notelist li::before { content: "•"; position: absolute; left: 6px; color: var(--amber); font-weight: 900; }
+.checklist li::before { content: "✓"; position: absolute; left: 0; color: var(--amber); font-weight: 700; }
+.notelist li::before { content: "•"; position: absolute; left: 6px; color: var(--amber); font-weight: 700; }
 
 .addons { list-style: none; padding: 0; margin: 0 auto; max-width: 720px; }
 .addons li { display: flex; align-items: baseline; gap: 10px; padding: 12px 0; border-bottom: 1px solid rgba(255, 255, 255, .08); }
 .addons li > span:first-child { font-weight: 700; color: #fff; }
-.addons small { display: block; font-weight: 400; color: #a9a199; font-size: .85rem; }
+.addons small { display: block; font-weight: 300; color: #a9a199; font-size: .85rem; }
 .addons .dots { flex: 1; border-bottom: 2px dotted rgba(255, 255, 255, .2); transform: translateY(-4px); min-width: 20px; }
-.addons li > span:last-child { color: var(--amber); font-weight: 900; white-space: nowrap; }
+.addons li > span:last-child { color: var(--amber); font-weight: 700; white-space: nowrap; }
 .addons__note { text-align: center; margin-top: 20px; font-style: italic; }
 
 .book {
@@ -308,7 +309,7 @@ button { font: inherit; cursor: pointer; }
 .field { display: flex; flex-direction: column; gap: 6px; }
 .field--full { grid-column: 1 / -1; }
 .field label { font-weight: 700; font-size: .9rem; }
-.optional { font-weight: 400; color: var(--ink-soft); }
+.optional { font-weight: 300; color: var(--ink-soft); }
 .field input, .field select, .field textarea {
   font: inherit; font-size: 1rem; padding: 12px 14px; border-radius: var(--radius-sm); border: 1.5px solid var(--line);
   background: #fff; color: var(--ink); min-height: 48px; width: 100%;
@@ -351,7 +352,7 @@ button { font: inherit; cursor: pointer; }
 .visit__grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(32px, 5vw, 64px); align-items: stretch; }
 .info-list { margin: 24px 0 8px; display: grid; gap: 18px; }
 .info-list > div { display: grid; grid-template-columns: 120px 1fr; gap: 12px; padding-bottom: 18px; border-bottom: 1px solid var(--line); }
-.info-list dt { font-weight: 900; text-transform: uppercase; letter-spacing: .12em; font-size: .78rem; color: var(--red); padding-top: 4px; }
+.info-list dt { font-weight: 700; text-transform: uppercase; letter-spacing: .12em; font-size: .78rem; color: var(--red); padding-top: 4px; }
 .info-list dd { margin: 0; }
 .info-list a { color: var(--ink); font-weight: 700; text-decoration: none; }
 .info-list a:hover { color: var(--red); }
