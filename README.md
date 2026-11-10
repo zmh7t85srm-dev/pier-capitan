@@ -47,5 +47,22 @@ Open `index.html` in a browser, or run `python3 -m http.server` in this folder a
 
 ## Deploy to piercapitan.com (GitHub Pages)
 
-Repo **Settings → Pages → Deploy from branch** (choose the branch, `/root`). Then point the domain's DNS to GitHub Pages:
-`A` records to 185.199.108.153 / .109.153 / .110.153 / .111.153, and a `CNAME` for `www` to `<user>.github.io`.
+1. In the GitHub repo go to **Settings → Pages**.
+2. Under **Build and deployment**, set **Source** to *Deploy from a branch*, choose the branch
+   `claude/serene-cerf-mfyn4b` (or `main` if it is renamed) and the folder `/ (root)`, then **Save**.
+3. Under **Custom domain**, enter `piercapitan.com` and **Save** (the `CNAME` file already contains it).
+4. At the domain registrar, set these DNS records:
+
+   | Type | Host | Value |
+   |---|---|---|
+   | A | @ | 185.199.108.153 |
+   | A | @ | 185.199.109.153 |
+   | A | @ | 185.199.110.153 |
+   | A | @ | 185.199.111.153 |
+   | CNAME | www | zmh7t85srm-dev.github.io |
+
+5. When the DNS check passes (minutes to a few hours), tick **Enforce HTTPS**.
+
+Until the domain is connected, the site is at `https://zmh7t85srm-dev.github.io/pier-capitan/`.
+Free GitHub accounts can only publish Pages from **public** repositories.
+`.nojekyll` tells GitHub to serve the files as they are, without running Jekyll.
