@@ -96,47 +96,72 @@
     btn.addEventListener("click", () => { if (pkgSelect) pkgSelect.value = btn.dataset.package; });
   });
 
-  /* ---------- Booking form → pre-filled email ---------- */
-  const form = document.getElementById("book-form");
-  const msg = form.querySelector(".form-msg");
-  const dateInput = document.getElementById("f-date");
-  dateInput.min = new Date().toISOString().slice(0, 10);
+  /* ---------- Forms → pre-filled email ---------- */
+  const today = new Date().toISOString().slice(0, 10);
 
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    let firstBad = null;
-    form.querySelectorAll("[required]").forEach((el) => {
-      const bad = !el.value.trim();
-      el.setAttribute("aria-invalid", String(bad));
-      if (bad && !firstBad) firstBad = el;
+  function bindMailForm(form, missingMsg, build) {
+    if (!form) return;
+    const msg = form.querySelector(".form-msg");
+    form.querySelectorAll('input[type="date"]').forEach((el) => { el.min = today; });
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      let firstBad = null;
+      form.querySelectorAll("[required]").forEach((el) => {
+        const bad = !el.value.trim();
+        el.setAttribute("aria-invalid", String(bad));
+        if (bad && !firstBad) firstBad = el;
+      });
+      if (firstBad) {
+        msg.classList.remove("is-ok");
+        msg.textContent = missingMsg;
+        firstBad.focus();
+        return;
+      }
+      const { subject, lines } = build(Object.fromEntries(new FormData(form).entries()));
+      const body = ["Hi Pier Capitan!", "", ...lines.filter((l) => l !== null), "", "Thank you!"].join("\n");
+      window.location.href = `mailto:${BOOKING_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      msg.classList.add("is-ok");
+      msg.textContent = "Opening your email app… If nothing happens, call us at +63 916 425 9830.";
     });
-    if (firstBad) {
-      msg.classList.remove("is-ok");
-      msg.textContent = "Please fill in your name, mobile number, event date and venue.";
-      firstBad.focus();
-      return;
-    }
-    const d = Object.fromEntries(new FormData(form).entries());
-    const subject = `Mobile Bar booking inquiry – ${d.date} (${d.pax})`;
-    const body = [
-      "Hi Pier Capitan!",
-      "",
-      "I'd like to inquire about booking the Mobile Bar.",
-      "",
-      `Name: ${d.name}`,
-      `Mobile: ${d.phone}`,
-      `Event date: ${d.date}`,
-      `Guests: ${d.pax}`,
-      `Package: ${d.package}`,
-      `Venue: ${d.venue}`,
-      d.notes ? `Notes: ${d.notes}` : "",
-      "",
-      "Thank you!"
-    ].join("\n");
-    window.location.href = `mailto:${BOOKING_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    msg.classList.add("is-ok");
-    msg.textContent = "Opening your email app… If nothing happens, call us at +63 916 425 9830.";
-  });
+  }
+
+  bindMailForm(
+    document.getElementById("reserve-form"),
+    "Please fill in your name, mobile number, date and time.",
+    (d) => ({
+      subject: `Table reservation request – ${d.date} ${d.time} (${d.guests} guests)`,
+      lines: [
+        "I'd like to reserve a table.",
+        "",
+        `Name: ${d.name}`,
+        `Mobile: ${d.phone}`,
+        `Date: ${d.date}`,
+        `Time: ${d.time}`,
+        `Guests: ${d.guests}`,
+        d.occasion ? `Occasion: ${d.occasion}` : null,
+        d.notes ? `Requests: ${d.notes}` : null
+      ]
+    })
+  );
+
+  bindMailForm(
+    document.getElementById("book-form"),
+    "Please fill in your name, mobile number, event date and venue.",
+    (d) => ({
+      subject: `Mobile Bar booking inquiry – ${d.date} (${d.pax})`,
+      lines: [
+        "I'd like to inquire about booking the Mobile Bar.",
+        "",
+        `Name: ${d.name}`,
+        `Mobile: ${d.phone}`,
+        `Event date: ${d.date}`,
+        `Guests: ${d.pax}`,
+        `Package: ${d.package}`,
+        `Venue: ${d.venue}`,
+        d.notes ? `Notes: ${d.notes}` : null
+      ]
+    })
+  );
 
   /* ---------- Gallery lightbox ---------- */
   const box = document.getElementById("lightbox");
