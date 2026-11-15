@@ -66,36 +66,6 @@
   const tabSets = {};
   document.querySelectorAll("[data-tabs]").forEach((el) => { tabSets[el.dataset.tabs] = initTabs(el); });
 
-  // Links that should open a specific package tab (e.g. promo → Beer packages)
-  document.querySelectorAll("[data-open-tab]").forEach((a) => {
-    a.addEventListener("click", () => tabSets.packages && tabSets.packages.selectById("tab-" + a.dataset.openTab));
-  });
-
-  /* ---------- Mobile Bar: price by number of guests ---------- */
-  const peso = new Intl.NumberFormat("en-PH", { style: "currency", currency: "PHP", maximumFractionDigits: 0 });
-  const paxSelect = document.getElementById("f-pax");
-  document.querySelectorAll('input[name="pax"]').forEach((radio) => {
-    radio.addEventListener("change", () => {
-      const pax = radio.value;
-      document.querySelectorAll(".pkg[data-prices]").forEach((card) => {
-        const prices = JSON.parse(card.dataset.prices);
-        const amount = card.querySelector(".pkg__amount");
-        amount.textContent = peso.format(prices[pax]);
-        card.querySelector(".pkg__pax").textContent = pax;
-        amount.classList.remove("is-updating");
-        void amount.offsetWidth; // restart animation
-        amount.classList.add("is-updating");
-      });
-      if (paxSelect) paxSelect.value = pax + " pax";
-    });
-  });
-
-  /* ---------- "Book this" buttons prefill the form ---------- */
-  const pkgSelect = document.getElementById("f-package");
-  document.querySelectorAll("[data-package]").forEach((btn) => {
-    btn.addEventListener("click", () => { if (pkgSelect) pkgSelect.value = btn.dataset.package; });
-  });
-
   /* ---------- Forms → pre-filled email ---------- */
   const today = new Date().toISOString().slice(0, 10);
 

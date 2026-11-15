@@ -102,7 +102,7 @@
           <p class="hero__lead">Charcoal-grilled Filipino favorites, hearty plates made for sharing and ice-cold drinks. Bring the family, the barkada or the whole office. There's always a table at the Pier.</p>
           <div class="hero__actions">
             <a class="btn btn--red" href="#reserve">Reserve a Table</a>
-            <a class="btn btn--ghost" href="#menu">See the Menu</a>
+            <a class="btn btn--outline" href="#menu">See the Menu</a>
           </div>
         </div>
 
@@ -332,7 +332,7 @@
               <span class="badge badge--amber">Free</span>
               <h3>Free Taste Test</h3>
               <p>Book any <strong>Unlimited Mobile Bar package for 100 pax &amp; above</strong> and enjoy a free drinks taste test at Pier Capitan before your big day.</p>
-              <a class="link-arrow" href="#mobile-bar">See packages</a>
+              <a class="link-arrow" href="#unlimited-packages">See packages</a>
             </div>
           </article>
 
@@ -342,7 +342,7 @@
               <span class="badge">Beer Package</span>
               <h3>3 Hours of Beer from ₱8,000</h3>
               <p>Classic &amp; flavored beers, Smirnoff Mule and beer towers — with a bartender and full bar setup.</p>
-              <a class="link-arrow" href="#mobile-bar" data-open-tab="beer">View beer packages</a>
+              <a class="link-arrow" href="#beer-packages">View beer packages</a>
             </div>
           </article>
 
@@ -370,32 +370,20 @@
             <p>Weddings, debuts, birthdays, company parties — our professional bartenders roll in with a fully lit mobile bar, menus and drink tags, and keep the cocktails flowing for three hours straight.</p>
             <div class="hero__actions">
               <a class="btn btn--amber" href="#book">Book Now</a>
-              <a class="btn btn--ghost" href="tel:+639164259830">Call +63 916 425 9830</a>
+              <a class="btn btn--outline" href="tel:+639164259830">Call +63 916 425 9830</a>
             </div>
           </div>
           <div class="ph ph--dark mb-intro__img" role="img" aria-label="Photo 6"><span>Photo 6</span></div>
         </div>
 
-        <div class="tabs tabs--dark" role="tablist" aria-label="Mobile bar packages" data-tabs="packages">
-          <button role="tab" id="tab-unlimited" aria-controls="panel-unlimited" aria-selected="true">Unlimited Package</button>
-          <button role="tab" id="tab-beer" aria-controls="panel-beer" aria-selected="false" tabindex="-1">Beer Package</button>
-          <button role="tab" id="tab-addons" aria-controls="panel-addons" aria-selected="false" tabindex="-1">Add-ons</button>
-        </div>
-
         <!-- Unlimited -->
-        <div class="pkg-panel" role="tabpanel" id="panel-unlimited" aria-labelledby="tab-unlimited">
-          <fieldset class="pax-picker">
-            <legend>Number of guests</legend>
-            <label><input type="radio" name="pax" value="50" checked><span>50 pax</span></label>
-            <label><input type="radio" name="pax" value="100"><span>100 pax</span></label>
-            <label><input type="radio" name="pax" value="150"><span>150 pax</span></label>
-            <label><input type="radio" name="pax" value="200"><span>200 pax</span></label>
-          </fieldset>
-
+        <div class="pkg-panel" id="unlimited-packages">
+          <h3 class="pkg-heading">Unlimited Package</h3>
+          <p class="pkg-sub">Free-flowing cocktails for 3 hours. Rates depend on the number of guests.</p>
           <div class="pkg-grid">
-            <article class="pkg" data-prices='{"50":9500,"100":15000,"150":22000,"200":28000}'>
-              <header><h3>Cheers Starter</h3><p class="pkg__tier">Standard</p></header>
-              <p class="pkg__price"><span class="pkg__amount">₱9,500</span><span class="pkg__per">for <span class="pkg__pax">50</span> pax</span></p>
+            <article class="pkg">
+              <header><h4>Cheers Starter</h4><p class="pkg__tier">Standard</p></header>
+              <p class="pkg__price"><span class="pkg__per">Starts at</span><span class="pkg__amount">₱9,500</span></p>
               <p class="pkg__label">A choice of:</p>
               <ul>
                 <li>3 Cocktail Shots</li>
@@ -403,13 +391,20 @@
                 <li>2 Mocktails <small>(non-alcoholic)</small></li>
                 <li>1 Cocktail Tower</li>
               </ul>
-              <a class="btn btn--outline-amber" href="#book" data-package="Unlimited – Cheers Starter (Standard)">Book this</a>
+              <table class="pkg__rates">
+                <caption>Rates</caption>
+                <tr><th scope="row">50 pax</th><td>₱9,500</td></tr>
+                <tr><th scope="row">100 pax</th><td>₱15,000</td></tr>
+                <tr><th scope="row">150 pax</th><td>₱22,000</td></tr>
+                <tr><th scope="row">200 pax</th><td>₱28,000</td></tr>
+              </table>
+              <a class="btn btn--outline" href="#book">Book this</a>
             </article>
 
-            <article class="pkg pkg--popular" data-prices='{"50":10500,"100":17000,"150":25000,"200":32000}'>
+            <article class="pkg pkg--popular">
               <span class="pkg__ribbon">Most popular</span>
-              <header><h3>Mix It Up</h3><p class="pkg__tier">De Luxe</p></header>
-              <p class="pkg__price"><span class="pkg__amount">₱10,500</span><span class="pkg__per">for <span class="pkg__pax">50</span> pax</span></p>
+              <header><h4>Mix It Up</h4><p class="pkg__tier">De Luxe</p></header>
+              <p class="pkg__price"><span class="pkg__per">Starts at</span><span class="pkg__amount">₱10,500</span></p>
               <p class="pkg__label">A choice of:</p>
               <ul>
                 <li>4 Cocktail Shots</li>
@@ -417,12 +412,19 @@
                 <li>2 Mocktails <small>(non-alcoholic)</small></li>
                 <li>2 Cocktail Towers</li>
               </ul>
-              <a class="btn btn--amber" href="#book" data-package="Unlimited – Mix It Up (De Luxe)">Book this</a>
+              <table class="pkg__rates">
+                <caption>Rates</caption>
+                <tr><th scope="row">50 pax</th><td>₱10,500</td></tr>
+                <tr><th scope="row">100 pax</th><td>₱17,000</td></tr>
+                <tr><th scope="row">150 pax</th><td>₱25,000</td></tr>
+                <tr><th scope="row">200 pax</th><td>₱32,000</td></tr>
+              </table>
+              <a class="btn btn--amber" href="#book">Book this</a>
             </article>
 
-            <article class="pkg" data-prices='{"50":11500,"100":19000,"150":28000,"200":36000}'>
-              <header><h3>Party Like a Pro</h3><p class="pkg__tier">Premium</p></header>
-              <p class="pkg__price"><span class="pkg__amount">₱11,500</span><span class="pkg__per">for <span class="pkg__pax">50</span> pax</span></p>
+            <article class="pkg">
+              <header><h4>Party Like a Pro</h4><p class="pkg__tier">Premium</p></header>
+              <p class="pkg__price"><span class="pkg__per">Starts at</span><span class="pkg__amount">₱11,500</span></p>
               <p class="pkg__label">A choice of:</p>
               <ul>
                 <li>5 Cocktail Shots</li>
@@ -430,7 +432,14 @@
                 <li>3 Mocktails <small>(non-alcoholic)</small></li>
                 <li>3 Cocktail Towers</li>
               </ul>
-              <a class="btn btn--outline-amber" href="#book" data-package="Unlimited – Party Like a Pro (Premium)">Book this</a>
+              <table class="pkg__rates">
+                <caption>Rates</caption>
+                <tr><th scope="row">50 pax</th><td>₱11,500</td></tr>
+                <tr><th scope="row">100 pax</th><td>₱19,000</td></tr>
+                <tr><th scope="row">150 pax</th><td>₱28,000</td></tr>
+                <tr><th scope="row">200 pax</th><td>₱36,000</td></tr>
+              </table>
+              <a class="btn btn--outline" href="#book">Book this</a>
             </article>
           </div>
 
@@ -457,10 +466,12 @@
         </div>
 
         <!-- Beer -->
-        <div class="pkg-panel" role="tabpanel" id="panel-beer" aria-labelledby="tab-beer" hidden>
+        <div class="pkg-panel" id="beer-packages">
+          <h3 class="pkg-heading">Beer Package</h3>
+          <p class="pkg-sub">Beer for 3 hours, with a bartender and full bar set-up.</p>
           <div class="pkg-grid">
             <article class="pkg">
-              <header><h3>Mini Pack</h3><p class="pkg__tier">Beer Package</p></header>
+              <header><h4>Mini Pack</h4><p class="pkg__tier">Beer Package</p></header>
               <p class="pkg__price"><span class="pkg__amount">₱8,000</span><span class="pkg__per">3 hours</span></p>
               <p class="pkg__label">A choice of:</p>
               <ul>
@@ -469,11 +480,11 @@
                 <li>1 Smirnoff Mule</li>
                 <li>2 Beer Towers</li>
               </ul>
-              <a class="btn btn--outline-amber" href="#book" data-package="Beer – Mini Pack">Book this</a>
+              <a class="btn btn--outline" href="#book">Book this</a>
             </article>
             <article class="pkg pkg--popular">
               <span class="pkg__ribbon">Best value</span>
-              <header><h3>Family Pack</h3><p class="pkg__tier">Beer Package</p></header>
+              <header><h4>Family Pack</h4><p class="pkg__tier">Beer Package</p></header>
               <p class="pkg__price"><span class="pkg__amount">₱10,000</span><span class="pkg__per">3 hours</span></p>
               <p class="pkg__label">A choice of:</p>
               <ul>
@@ -482,10 +493,10 @@
                 <li>1 Smirnoff Mule</li>
                 <li>2 Beer Towers</li>
               </ul>
-              <a class="btn btn--amber" href="#book" data-package="Beer – Family Pack">Book this</a>
+              <a class="btn btn--amber" href="#book">Book this</a>
             </article>
             <article class="pkg">
-              <header><h3>Party Pack</h3><p class="pkg__tier">Beer Package</p></header>
+              <header><h4>Party Pack</h4><p class="pkg__tier">Beer Package</p></header>
               <p class="pkg__price"><span class="pkg__amount">₱12,000</span><span class="pkg__per">3 hours</span></p>
               <p class="pkg__label">A choice of:</p>
               <ul>
@@ -494,7 +505,7 @@
                 <li>1 Smirnoff Mule</li>
                 <li>3 Beer Towers</li>
               </ul>
-              <a class="btn btn--outline-amber" href="#book" data-package="Beer – Party Pack">Book this</a>
+              <a class="btn btn--outline" href="#book">Book this</a>
             </article>
           </div>
           <div class="pkg-notes">
@@ -518,7 +529,9 @@
         </div>
 
         <!-- Add-ons -->
-        <div class="pkg-panel" role="tabpanel" id="panel-addons" aria-labelledby="tab-addons" hidden>
+        <div class="pkg-panel" id="add-ons">
+          <h3 class="pkg-heading">Add-ons</h3>
+          <p class="pkg-sub">Bottles you can add to any package.</p>
           <ul class="addons">
             <li><span>Beer</span><span class="dots"></span><span>₱65 / btl</span></li>
             <li><span>Red Wine <small>Shiraz | Cabernet Sauvignon</small></span><span class="dots"></span><span>₱950 / btl</span></li>
