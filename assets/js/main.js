@@ -26,7 +26,7 @@
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") setNav(false); });
 
   /* ---------- Active nav link on scroll ---------- */
-  const links = [...document.querySelectorAll(".nav__list a")];
+  const links = [...document.querySelectorAll(".nav__list li:not(.nav__cta) a")];
   const sections = links.map((a) => document.querySelector(a.getAttribute("href"))).filter(Boolean);
   if ("IntersectionObserver" in window) {
     const io = new IntersectionObserver((entries) => {
