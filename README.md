@@ -31,6 +31,27 @@ tags, Google business data (schema.org) and an accessible layout (keyboard tabs,
    To receive submissions without email apps, connect a form service (Formspree, Netlify Forms, etc.).
 6. **More photos**: add food and dining-area photos to `assets/img/` and to the gallery list.
 
+
+## Photo spots
+
+The site shows numbered blank spaces until the client supplies photos. Send photos named by number (e.g. `photo-1.jpg`).
+
+| Photo | Section | Suggested shot |
+|---|---|---|
+| Photo 1 | About Us | Dining area |
+| Photo 2 | About Us | Signature dish |
+| Photo 3 | Promotions | Mobile Bar event |
+| Photo 4 | Promotions | Beer package |
+| Photo 5 | Promotions | Group celebration |
+| Photo 6 | Mobile Bar | Mobile Bar setup |
+| Photo 7 | Gallery | Restaurant interior |
+| Photo 8 | Gallery | Grilled specialty |
+| Photo 9 | Gallery | Food |
+| Photo 10 | Gallery | Food |
+| Photo 11 | Gallery | Drinks |
+| Photo 12 | Gallery | Crew & guests |
+| Photo 13 | Gallery | Mobile Bar event |
+
 ## Files
 
 ```
