@@ -425,8 +425,11 @@ button { font: inherit; cursor: pointer; }
 .footer__nav { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 24px; }
 .footer a { color: #fff; text-decoration: none; font-weight: 700; }
 .footer a:hover { text-decoration: underline; color: #fff; }
-.footer__contact { margin: 0; font-size: .95rem; }
-.footer__legal { margin: 0; font-size: .82rem; opacity: .75; }
+.footer__contact { margin: 0; font-size: .95rem; font-style: normal; display: grid; gap: 4px; }
+.footer__contact span { display: block; }
+.footer__advisory { margin: 6px 0 0; padding: 10px 18px; font-size: .88rem; border: 1px solid rgba(255, 255, 255, .3); border-radius: 999px; max-width: 100%; }
+.footer__legal { margin: 0; font-size: .82rem; opacity: .8; }
+.footer__credit { margin: 0; padding-top: 14px; width: 100%; border-top: 1px solid rgba(255, 255, 255, .15); font-size: .8rem; opacity: .85; }
 
 /* ---------- Mobile quick bar ---------- */
 .quickbar { display: none; }
@@ -504,6 +507,7 @@ button { font: inherit; cursor: pointer; }
   .book__form, .reserve__form { grid-template-columns: 1fr; }
   .menucard__list em { display: none; }
   .info-list > div { grid-template-columns: 1fr; gap: 2px; }
+  .footer__advisory { border-radius: var(--radius); }
   .tabs [role="tab"] { padding: 8px 16px; font-size: .88rem; }
   .gallery-grid { grid-auto-rows: 140px; gap: 10px; }
   .lightbox__nav { top: auto; bottom: 22px; transform: none; }
